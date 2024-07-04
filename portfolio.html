@@ -1,71 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Portfolio</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.w3-row-padding img {margin-bottom: 12px}
-/* Set the width of the sidebar to 120px */
-.w3-sidebar {width: 120px;background: #222;}
-/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-#main {margin-left: 120px}
-/* Remove margins from "page content" on small screens */
-@media only screen and (max-width: 600px) {#main {margin-left: 0}}
-/* Add custom styles for the project section */
-.project-container {
-  background-color: #444;
-  padding: 16px;
-  border-radius: 8px;
-  margin-bottom: 24px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.project-container:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-}
-.project-img {
-  border-radius: 8px;
-  margin-bottom: 16px;
-}
-.project-link {
-  text-decoration: none;
-  color: #fff;
-  font-size: 1.25em;
-}
-.project-link:hover {
-  color: #ddd;
-}
-.project-title {
-  margin-top: 0;
-  color: #fff;
-}
-</style>
+  <title>Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body, h1, h2, h3, h4, h5, h6 {font-family: "Montserrat", sans-serif}
+    .w3-row-padding img {margin-bottom: 12px}
+    /* Set the width of the sidebar to 120px */
+    .w3-sidebar {width: 120px; background: #222;}
+    /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+    #main {margin-left: 120px}
+    /* Remove margins from "page content" on small screens */
+    @media only screen and (max-width: 600px) {#main {margin-left: 0}}
+    /* Add custom styles for the project section */
+    .project-container {
+      background-color: #444;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project-container:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+    .project-img {
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+    .project-link {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.25em;
+    }
+    .project-link:hover {
+      color: #ddd;
+    }
+    .project-title {
+      margin-top: 0;
+      color: #fff;
+    }
+    .w3-bar-item.active {
+      background-color: black !important;
+    }
+  </style>
 </head>
 <body class="w3-black">
 
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
   <!-- Avatar image in top left corner -->
-  <img src="/w3images/avatar_smoke.jpg" style="width:100%">
-  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-black">
+  <img src="images/Logo.png" style="width:100%">
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black active" id="about-link">
     <i class="fa fa-user w3-xxlarge"></i>
     <p>ABOUT</p>
   </a>
-  <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+  <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hover-black" id="projects-link">
     <i class="fa fa-briefcase w3-xxlarge"></i>
     <p>PROJECTS</p>
   </a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black" id="contact-link">
     <i class="fa fa-envelope w3-xxlarge"></i>
     <p>CONTACT</p>
   </a>
-  <a href="#donations" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+  <a href="#donations" class="w3-bar-item w3-button w3-padding-large w3-hover-black" id="donations-link">
     <i class="fa fa-money w3-xxlarge"></i>
     <p>DONATIONS</p>
   </a>
@@ -87,27 +90,24 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
     <h1 class="w3-jumbo"><span class="w3-hide-small"></span> Mr.Positions</h1>
     <p>Web Designer</p>
-    <img src="/w3images/man_smoke.jpg" alt="boy" class="w3-image" width="992" height="1108">
   </header>
 
   <!-- About Section -->
   <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
     <h2 class="w3-text-light-grey">Introduction</h2>
     <hr style="width:200px" class="w3-opacity">
-    <p>Passionate, conscientious and hard-working individual who will diligently fulfill any agreed upon task to the utter satisfaction of his client(s). Currently capable of designing and adorning websites at a decent level. The purpose of this portfolio is to showcase some of my work.
-    </p>
+    <p>Passionate, conscientious and hard-working individual who will diligently fulfill any agreed upon task to the utter satisfaction of his client(s). Currently capable of designing and adorning websites at an adequate level. The purpose of this portfolio is to showcase some of my work.</p>
     <h3 class="w3-padding-16 w3-text-light-grey">Skills</h3>
     <p class="w3-wide">Web Design</p>
     <div class="w3-white">
       <div class="w3-dark-grey" style="height:28px;width:65%"></div>
     </div>
-    </div><br>
+  </div><br>
 
   <!-- Projects Section -->
   <div class="w3-padding-64 w3-content" id="projects">
     <h2 class="w3-text-light-grey">Work Display</h2>
     <hr style="width:200px" class="w3-opacity">
-
     <div class="w3-row-padding w3-center">
       <div class="w3-quarter w3-section project-container">
         <img src="images/RFighter.png" style="width:100%" class="project-img">
@@ -125,14 +125,12 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
     <h2 class="w3-text-light-grey">Contact Me</h2>
     <hr style="width:200px" class="w3-opacity">
-
     <div class="w3-section">
       <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Sindh, Pakistan</p>
       <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +92 330 3593322</p>
-      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: dotasmurf4444@gmail.com</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Email: dotasmurf4444@gmail.com</p>
     </div><br>
     <p>Let's get in touch. Send me a message:</p>
-
     <form action="/action_page.php" target="_blank">
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
@@ -144,17 +142,19 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
         </button>
       </p>
     </form>
-  <!-- End Contact Section -->
   </div>
+  <!-- End Contact Section -->
 
   <!-- Donations Section -->
   <div class="w3-padding-64 w3-content w3-text-grey" id="donations">
     <h2 class="w3-text-light-grey">Support Me</h2>
     <hr style="width:200px" class="w3-opacity">
-
     <p>If you appreciate my work and would like to support me, you can make a donation through the following links:</p>
     <p><a href="https://www.paypal.com/donate/?hosted_button_id=YOUR_PAYPAL_BUTTON_ID" class="w3-button w3-light-grey w3-padding-large" target="_blank">
       <i class="fa fa-paypal"></i> Donate via PayPal
+    </a></p>
+    <p><a href="YOUR_PAYONEER_DONATION_LINK" class="w3-button w3-light-grey w3-padding-large" target="_blank">
+      <i class="fa fa-credit-card"></i> Donate via Payoneer
     </a></p>
     <p><a href="https://www.buymeacoffee.com/YOUR_PROFILE" class="w3-button w3-light-grey w3-padding-large" target="_blank">
       <i class="fa fa-coffee"></i> Buy Me a Coffee
@@ -166,15 +166,62 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
     <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <a href="https://www.fiverr.com/haidersadiq4444?up_rollout=true" target="_blank">
+      <img src="images/Fiverr.png" alt="Fiverr" class="w3-hover-opacity" style="width:48px;height:48px;">
+    </a>
     <i class="fa fa-pinterest-p w3-hover-opacity"></i>
     <i class="fa fa-twitter w3-hover-opacity"></i>
     <i class="fa fa-linkedin w3-hover-opacity"></i>
     <p class="w3-medium">Powered by <a href="#" target="_blank" class="w3-hover-text-green">Mr.Positions</a></p>
   </footer>
-
-<!-- END PAGE CONTENT -->
+  <!-- END PAGE CONTENT -->
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const navItems = document.querySelectorAll('.w3-sidebar .w3-bar-item');
+    const sections = document.querySelectorAll('#about, #projects, #contact, #donations');
+    const sidebar = document.querySelector('.w3-sidebar');
+    const initialLink = document.querySelector('#about-link');
+
+    function removeActiveClasses() {
+      navItems.forEach(item => item.classList.remove('active'));
+    }
+
+    function setActiveLink(id) {
+      removeActiveClasses();
+      const activeLink = document.querySelector(`.w3-sidebar a[href="#${id}"]`);
+      if (activeLink) {
+        activeLink.classList.add('active');
+      }
+    }
+
+    navItems.forEach(item => {
+      item.addEventListener('click', function() {
+        removeActiveClasses();
+        this.classList.add('active');
+      });
+    });
+
+    window.addEventListener('scroll', function() {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 80;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop && pageYOffset <= sectionTop + sectionHeight) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      setActiveLink(current);
+    });
+
+    // Initial setup
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setActiveLink('about');
+  });
+</script>
+
 
 </body>
 </html>
