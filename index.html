@@ -10,13 +10,9 @@
   <style>
     body, h1, h2, h3, h4, h5, h6 {font-family: "Montserrat", sans-serif}
     .w3-row-padding img {margin-bottom: 12px}
-    /* Set the width of the sidebar to 120px */
     .w3-sidebar {width: 120px; background: #222;}
-    /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
     #main {margin-left: 120px}
-    /* Remove margins from "page content" on small screens */
     @media only screen and (max-width: 600px) {#main {margin-left: 0}}
-    /* Add custom styles for the project section */
     .project-container {
       background-color: #444;
       padding: 16px;
@@ -48,13 +44,20 @@
     .w3-bar-item.active {
       background-color: black !important;
     }
+    /* Additional styles for button state change */
+    #submit-button {
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .w3-green {
+      background-color: #4CAF50 !important;
+      color: white !important;
+    }
   </style>
 </head>
 <body class="w3-black">
 
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <!-- Avatar image in top left corner -->
   <img src="images/Logo.png" style="width:100%">
   <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black active" id="about-link">
     <i class="fa fa-user w3-xxlarge"></i>
@@ -131,18 +134,17 @@
       <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Email: dotasmurf4444@gmail.com</p>
     </div><br>
     <p>Let's get in touch. Send me a message:</p>
-    <form action="https://portfolio-4zaw.vercel.app//send-email" method="POST" id="contact-form">
-  <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="name"></p>
-  <p><input class="w3-input w3-padding-16" type="email" placeholder="Email" required name="email"></p>
-  <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="subject"></p>
-  <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="message"></p>
-  <p>
-    <button class="w3-button w3-light-grey w3-padding-large" type="submit">
-      <i class="fa fa-paper-plane"></i> SEND MESSAGE
-    </button>
-  </p>
-</form>
-
+    <form id="contact-form">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="name"></p>
+      <p><input class="w3-input w3-padding-16" type="email" placeholder="Email" required name="email"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="subject"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="message"></p>
+      <p>
+        <button id="submit-button" class="w3-button w3-light-grey w3-padding-large" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
   </div>
   <!-- End Contact Section -->
 
@@ -185,7 +187,7 @@
     const sidebar = document.querySelector('.w3-sidebar');
     const initialLink = document.querySelector('#about-link');
 
-    function removeActiveClasses() {
+        function removeActiveClasses() {
       navItems.forEach(item => item.classList.remove('active'));
     }
 
@@ -207,7 +209,7 @@
     window.addEventListener('scroll', function() {
       let current = '';
       sections.forEach(section => {
-        const sectionTop = section.offsetTop - 80;
+        const sectionTop = section.offsetTop - 80; // Offset for sticky navbar
         const sectionHeight = section.clientHeight;
         if (pageYOffset >= sectionTop && pageYOffset <= sectionTop + sectionHeight) {
           current = section.getAttribute('id');
@@ -221,8 +223,43 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setActiveLink('about');
   });
+
+  // New script for handling form submission and button feedback
+  document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById('contact-form');
+    const submitButton = document.getElementById('submit-button');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const formData = new FormData(form);
+
+      fetch('https://portfolio-4zaw.vercel.app/send-email', { // Update with your actual endpoint
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.message === 'Email sent') {
+          // Update button text and style
+          submitButton.innerHTML = '<i class="fa fa-check"></i> MESSAGE SENT';
+          submitButton.classList.remove('w3-light-grey');
+          submitButton.classList.add('w3-green');
+
+          // Reset after 1 second
+          setTimeout(() => {
+            submitButton.innerHTML = '<i class="fa fa-paper-plane"></i> SEND MESSAGE';
+            submitButton.classList.remove('w3-green');
+            submitButton.classList.add('w3-light-grey');
+          }, 1000);
+        } else {
+          alert('There was an issue sending your message. Please try again.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('There was an issue sending your message. Please try again.');
+      });
+    });
+  });
 </script>
-
-
-</body>
-</html>
