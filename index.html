@@ -187,7 +187,7 @@
     const sidebar = document.querySelector('.w3-sidebar');
     const initialLink = document.querySelector('#about-link');
 
-        function removeActiveClasses() {
+    function removeActiveClasses() {
       navItems.forEach(item => item.classList.remove('active'));
     }
 
@@ -233,10 +233,19 @@
       event.preventDefault(); // Prevent default form submission
 
       const formData = new FormData(form);
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        subject: formData.get('subject'),
+        message: formData.get('message')
+      };
 
       fetch('https://portfolio-4zaw.vercel.app/send-email', { // Update with your actual endpoint
         method: 'POST',
-        body: formData
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
       })
       .then(response => response.json())
       .then(data => {
@@ -263,3 +272,4 @@
     });
   });
 </script>
+
