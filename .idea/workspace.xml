@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10c97c02-62b5-4fad-8268-ab63e4b66224" name="Changes" comment="Abc" />
+    <list default="true" id="10c97c02-62b5-4fad-8268-ab63e4b66224" name="Changes" comment="Abc">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,7 +108,79 @@
       <option name="project" value="LOCAL" />
       <updated>1720353155453</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Abc">
+      <option name="closed" value="true" />
+      <created>1720356790085</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1720356790085</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Abc">
+      <option name="closed" value="true" />
+      <created>1720516786925</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1720516786925</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Abc">
+      <option name="closed" value="true" />
+      <created>1720531478214</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1720531478214</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Abc">
+      <option name="closed" value="true" />
+      <created>1720532458746</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1720532458746</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Abc">
+      <option name="closed" value="true" />
+      <created>1720533490656</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1720533490656</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Abc">
+      <option name="closed" value="true" />
+      <created>1720533888886</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1720533888886</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Abc">
+      <option name="closed" value="true" />
+      <created>1720534174560</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1720534174560</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Abc">
+      <option name="closed" value="true" />
+      <created>1720536935689</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1720536935690</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Abc">
+      <option name="closed" value="true" />
+      <created>1720537406740</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1720537406740</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
