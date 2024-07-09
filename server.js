@@ -26,10 +26,11 @@ app.post('/send-email', (req, res) => {
   const { name, email, subject, message } = req.body;
 
   const mailOptions = {
-    from: email, // User's email address
+    from: email, // Sender's email address
     to: process.env.EMAIL_USER, // Your email address
+    replyTo: email, // Reply to the sender's email address
     subject: `New message from ${name}: ${subject}`,
-    text: message
+    text: `Message from: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
   };
 
   transporter.sendMail(mailOptions, (error, info) => {

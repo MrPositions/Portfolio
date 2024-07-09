@@ -13,10 +13,11 @@ export default async function (req, res) {
     });
 
     const mailOptions = {
-      from: email,
-      to: process.env.EMAIL_USER,
+      from: email, // Sender's email address
+      to: process.env.EMAIL_USER, // Your email address
+      replyTo: email, // Reply to the sender's email address
       subject: `New message from ${name}: ${subject}`,
-      text: message
+      text: `Message from: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
     };
 
     try {
