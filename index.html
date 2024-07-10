@@ -138,7 +138,7 @@
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="name"></p>
       <p><input class="w3-input w3-padding-16" type="email" placeholder="Email" required name="email"></p>
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="subject"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="message"></p>
+      <p><textarea class="w3-input w3-padding-16" placeholder="Message" required name="message"></textarea></p>
       <p>
         <button id="submit-button" class="w3-button w3-light-grey w3-padding-large" type="submit">
           <i class="fa fa-paper-plane"></i> SEND MESSAGE
@@ -247,7 +247,14 @@
         },
         body: JSON.stringify(data)
       })
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          return response.json().then(errorData => {
+            throw new Error(`Server responded with error: ${errorData.message}`);
+          });
+        }
+        return response.json();
+      })
       .then(data => {
         if (data.message === 'Email sent') {
           // Update button text and style
@@ -255,21 +262,23 @@
           submitButton.classList.remove('w3-light-grey');
           submitButton.classList.add('w3-green');
 
-          // Reset after 1 second
+          // Reset after 1.5 seconds
           setTimeout(() => {
             submitButton.innerHTML = '<i class="fa fa-paper-plane"></i> SEND MESSAGE';
             submitButton.classList.remove('w3-green');
             submitButton.classList.add('w3-light-grey');
-          }, 1000);
+            form.reset(); // Reset the form fields
+          }, 1500);
         } else {
           alert('There was an issue sending your message. Please try again.');
         }
       })
       .catch(error => {
         console.error('Error:', error);
-        alert('There was an issue sending your message. Please try again.');
+        alert(`There was an issue sending your message. Please try again. Error: ${error.message}`);
       });
     });
   });
 </script>
-
+</body>
+</html>
