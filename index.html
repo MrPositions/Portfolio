@@ -52,6 +52,23 @@
       background-color: #4CAF50 !important;
       color: white !important;
     }
+    .pricing-container {
+      background-color: #444;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+      color: #fff;
+    }
+    .pricing-container:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+    .pricing-title {
+      margin-top: 0;
+      color: #fff;
+    }
   </style>
 </head>
 <body class="w3-black">
@@ -60,20 +77,24 @@
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
   <img src="images/Logo.png" style="width:100%">
   <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black active" id="about-link">
-    <i class="fa fa-user w3-xxlarge"></i>
+    <i class="fa fa-user-o w3-xxlarge"></i>
     <p>ABOUT</p>
   </a>
   <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hover-black" id="projects-link">
     <i class="fa fa-briefcase w3-xxlarge"></i>
     <p>PROJECTS</p>
   </a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black" id="contact-link">
-    <i class="fa fa-envelope w3-xxlarge"></i>
-    <p>CONTACT</p>
+  <a href="#packages" class="w3-bar-item w3-button w3-padding-large w3-hover-black" id="package-link">
+    <i class="fa fa-handshake-o w3-xxlarge"></i>
+    <p>DEALS</p>
   </a>
   <a href="#donations" class="w3-bar-item w3-button w3-padding-large w3-hover-black" id="donations-link">
     <i class="fa fa-money w3-xxlarge"></i>
     <p>DONATIONS</p>
+  </a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black" id="contact-link">
+    <i class="fa fa-envelope-o w3-xxlarge"></i>
+    <p>CONTACT</p>
   </a>
 </nav>
 
@@ -82,8 +103,9 @@
   <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
     <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
     <a href="#projects" class="w3-bar-item w3-button" style="width:25% !important">PROJECTS</a>
-    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+    <a href="#packages" class="w3-bar-item w3-button" style="width:25% !important">DEALS</a>
     <a href="#donations" class="w3-bar-item w3-button" style="width:25% !important">DONATIONS</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
   </div>
 </div>
 
@@ -111,6 +133,7 @@
   <div class="w3-padding-64 w3-content" id="projects">
     <h2 class="w3-text-light-grey">Work Display</h2>
     <hr style="width:200px" class="w3-opacity">
+    <h3 class="w3-padding-16 w3-text-light-grey">Websites</h3>
     <div class="w3-row-padding w3-center">
       <div class="w3-quarter w3-section project-container">
         <img src="images/RFighter.png" style="width:100%" class="project-img">
@@ -124,16 +147,69 @@
   </div>
   <!-- End Work Display Section -->
 
+  <!-- Grid for pricing tables -->
+  <div class="w3-padding-64 w3-content" id="packages">
+    <h2 class="w3-text-light-grey">Packages</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p></p>
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half w3-margin-bottom">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
+          <li class="w3-padding-16">Three Pages</li>
+          <li class="w3-padding-16">Standard Design</li>
+          <li class="w3-padding-16">Minimal Functionality</li>
+          <li class="w3-padding-16">Basic Instructions</li>
+          <li class="w3-padding-16">
+            <h2>$ 3</h2>
+            <span class="w3-opacity">per page</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <a href="YOUR_PAYONEER_DONATION_LINK" class="w3-button w3-white w3-padding-large w3-hover-black">Total $9</a>
+          </li>
+        </ul>
+      </div>
+      <div class="w3-half">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Pro</li>
+          <li class="w3-padding-16">Three Pages</li>
+          <li class="w3-padding-16">Quality Design</li>
+          <li class="w3-padding-16">Complete Functionality</li>
+          <li class="w3-padding-16">Descriptive User Guidelines</li>
+          <li class="w3-padding-16">
+            <h2>$ 5</h2>
+            <span class="w3-opacity">per page</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <a href="YOUR_PAYONEER_DONATION_LINK" class="w3-button w3-white w3-padding-large w3-hover-black">Total $15</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Donations Section -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="donations">
+    <h2 class="w3-text-light-grey">Support Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>As an aspiring, young, committed web designer, I would be grateful for all the assistance I can get.</p>
+    <p>If you appreciate my work and would like to make any contributions, please click on the link provided below:</p>
+    <p><a href="YOUR_PAYONEER_DONATION_LINK" class="w3-button w3-light-grey w3-padding-large" target="_blank">
+      <i class="fa fa-coffee"></i> Buy Me a Coffee
+    </a></p>
+  </div>
+  <!-- End Donations Section -->
+
   <!-- Contact Section -->
   <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <h2 class="w3-text-light-grey">Contact Info</h2>
     <hr style="width:200px" class="w3-opacity">
     <div class="w3-section">
       <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Sindh, Pakistan</p>
       <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +92 330 3593322</p>
-      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Email: dotasmurf4444@gmail.com</p>
+      <p><i class="fa fa-envelope-open fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Email: dotasmurf4444@gmail.com</p>
     </div><br>
-    <p>Let's get in touch. Send me a message:</p>
+    <p>Send me a message, stating your purpose for doing so along with explicit details for the kind of project you require:</p>
     <form id="contact-form">
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="name"></p>
       <p><input class="w3-input w3-padding-16" type="email" placeholder="Email" required name="email"></p>
@@ -147,23 +223,6 @@
     </form>
   </div>
   <!-- End Contact Section -->
-
-  <!-- Donations Section -->
-  <div class="w3-padding-64 w3-content w3-text-grey" id="donations">
-    <h2 class="w3-text-light-grey">Support Me</h2>
-    <hr style="width:200px" class="w3-opacity">
-    <p>If you appreciate my work and would like to support me, you can make a donation through the following links:</p>
-    <p><a href="https://www.paypal.com/donate/?hosted_button_id=YOUR_PAYPAL_BUTTON_ID" class="w3-button w3-light-grey w3-padding-large" target="_blank">
-      <i class="fa fa-paypal"></i> Donate via PayPal
-    </a></p>
-    <p><a href="YOUR_PAYONEER_DONATION_LINK" class="w3-button w3-light-grey w3-padding-large" target="_blank">
-      <i class="fa fa-credit-card"></i> Donate via Payoneer
-    </a></p>
-    <p><a href="https://www.buymeacoffee.com/YOUR_PROFILE" class="w3-button w3-light-grey w3-padding-large" target="_blank">
-      <i class="fa fa-coffee"></i> Buy Me a Coffee
-    </a></p>
-  </div>
-  <!-- End Donations Section -->
 
   <!-- Footer -->
   <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
@@ -183,7 +242,7 @@
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     const navItems = document.querySelectorAll('.w3-sidebar .w3-bar-item');
-    const sections = document.querySelectorAll('#about, #projects, #contact, #donations');
+    const sections = document.querySelectorAll('#about, #projects, #packages, #donations, #contact');
     const sidebar = document.querySelector('.w3-sidebar');
     const initialLink = document.querySelector('#about-link');
 
