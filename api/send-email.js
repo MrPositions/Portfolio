@@ -18,11 +18,26 @@ const sendEmail = (req, res) => {
     text: `From: ${name}\nEmail: ${email}\n\nSubject: ${subject}\n\nMessage:\n${message}`
   };
 
+  const autoReplyOptions = {
+    from: 'your-email@gmail.com',
+    to: email,
+    subject: 'Thank you for your message',
+    text: 'Thank you for taking the time to review my portfolio and conducting business with me. Your request will be reviewed and responded to shortly.'
+  };
+
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       return res.status(500).json({ message: error.message });
     }
-    res.status(200).json({ message: 'Email sent' });
+
+    // Send auto-reply to user
+    transporter.sendMail(autoReplyOptions, (autoReplyError, autoReplyInfo) => {
+      if (autoReplyError) {
+        return res.status(500).json({ message: autoReplyError.message });
+      }
+
+      res.status(200).json({ message: 'Emails sent successfully' });
+    });
   });
 };
 
